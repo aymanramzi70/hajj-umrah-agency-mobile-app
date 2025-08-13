@@ -1,16 +1,73 @@
-# untitled2
+# تطبيق وكالة الحج والعمرة (الواجهة الأمامية - Flutter)
 
-A new Flutter project.
+![Flutter Logo](https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.svg)
 
-## Getting Started
+هذا هو تطبيق الموبايل (الواجهة الأمامية) لوكالة خدمات الحج والعمرة، تم تطويره باستخدام **Flutter**، مما يسمح له بالعمل على نظامي **Android** و **iOS** من قاعدة كود واحدة. يتصل هذا التطبيق بالواجهة الخلفية المذكورة أعلاه عبر APIs.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## الميزات الرئيسية
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **نظام مصادقة متكامل**: تسجيل الدخول، إنشاء حساب جديد، وتسجيل الخروج.
+- **تخصيص الملف الشخصي**: عرض وتعديل بيانات العميل الأساسية.
+- **عرض الباقات**: تصفح باقات الحج والعمرة المتاحة وتفاصيلها.
+- **إدارة الحجوزات**: عرض جميع الحجوزات الخاصة بالعميل.
+- **الدفع الإلكتروني**: دمج بوابة الدفع Stripe للسماح للعملاء بإتمام المدفوعات.
+- **الإشعارات الفورية**: تلقي إشعارات فورية حول تحديثات الحجوزات والعروض.
+- **دعم التواصل**: شاشة "تواصل معنا" تحتوي على معلومات الاتصال بالوكالة.
+- **التعريب**: واجهة مستخدم كاملة باللغة العربية.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## المتطلبات
+
+-   Flutter SDK (3.x أو أحدث).
+-   Dart SDK.
+-   Android Studio أو VS Code مع إضافات Flutter.
+-   Android Emulator أو جهاز حقيقي.
+-   (اختياري) Xcode لتشغيل التطبيق على iOS Simulator.
+
+---
+
+## دليل التثبيت
+
+1.  **استنساخ المستودع (Clone the repository):**
+    ```bash
+    git clone [https://github.com/your-username/hajj-umrah-agency-mobile-app.git](https://github.com/your-username/hajj-umrah-agency-mobile-app.git)
+    cd hajj-umrah-agency-mobile-app
+    ```
+
+2.  **الحصول على الحزم (Get dependencies):**
+    ```bash
+    flutter pub get
+    ```
+
+3.  **إعداد Firebase:**
+    -   يجب أن يكون لديك مشروع Firebase مُعد مسبقًا.
+    -   قم بتشغيل `flutterfire configure` لربط المشروع بـ Firebase.
+    -   ضع ملف `google-services.json` في مجلد `android/app/`.
+    -   ضع ملف `GoogleService-Info.plist` في مجلد `ios/Runner/`.
+
+4.  **تعديل `lib/utils/constants.dart`:**
+    -   قم بتحديث عنوان الـ API ليشير إلى خادم Laravel الخاص بك (مثلاً: `http://10.0.2.2:8000/api` للمحاكي الأندرويد).
+    -   أضف مفتاح Stripe القابل للنشر (`STRIPE_PUBLISHABLE_KEY`) هنا.
+
+5.  **تشغيل التطبيق:**
+    ```bash
+    flutter run
+    ```
+
+---
+
+## دليل الاستخدام
+
+-   **تسجيل الدخول**: يمكنك استخدام نفس بيانات المستخدمين الذين تم إنشاؤهم في الواجهة الخلفية.
+-   **الدفع**: يمكنك استخدام أرقام بطاقات Stripe التجريبية لإتمام المدفوعات.
+
+---
+
+## المساهمة
+
+للتطوير أو المساهمة في المشروع، يرجى استنساخ المستودع، إنشاء فرع جديد للميزة أو الإصلاح، ثم إرسال طلب سحب (Pull Request).
+
+---
